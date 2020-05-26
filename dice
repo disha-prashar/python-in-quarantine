@@ -1,0 +1,19 @@
+from random import randint
+
+def repeatRoll(repeat):
+    if (repeat == "Y"):
+        return True
+    else:
+        return False
+
+print("You are going to be rolling a dice")
+
+repeat = "Y";
+while repeatRoll(repeat):
+    num1 = randint(1, 6)
+    print("The dice rolled " + str(num1) + ".")
+    repeat = input("Would you like to roll the dice again? Enter Y or N. ")
+    repeatRoll(repeat)
+
+print()
+print("Have a nice day :)")
