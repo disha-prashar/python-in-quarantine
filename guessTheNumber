@@ -1,0 +1,35 @@
+from random import randint
+
+num1 = randint(1, 10)
+
+def inputType(guess):
+    if guess.isdigit() == True:
+        return True
+    else:
+        return False
+
+def difference(guess):
+    diff = abs(num1-guess)
+    return diff
+
+def compare(guess):
+    if num1 == guess:
+        return True
+    else:
+        return False
+
+guess = input("Guess the random number generated between 1 and 10: ")
+while not inputType(guess):
+    print("Your input is not valid.")
+    guess = input("Guess the random number generated between 1 and 10: ")
+
+guess = int(guess)
+
+result = compare(guess)
+difference = difference(guess)
+
+if result == True:
+    print("You guessed correctly! The number is " + num1 + ".")
+else:
+    print("That's wrong! You were off by " + str(difference) + ".")
+    print("The number was " + str(num1) + ".")
